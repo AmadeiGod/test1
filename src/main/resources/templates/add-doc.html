@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" enctype="multipart/form-data" th:action="@{/add-document}" th:object="${docTest}" method="POST">
+    <label for="name"></label>
+    <input type="text"  th:field="*{name}" id="name" placeholder="name"><br>
+    <label for="contentType"></label>
+    <input type="text"  th:field="*{contentType}"  id="contentType" placeholder="contentType"><br>
+    <input type="file" name="doc" multiple/><br>
+    <input class="form-button" type="submit" value="Добавить книгу" >
+</form>
+</body>
+</html>

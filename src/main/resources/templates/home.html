@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/search}" method="get">
+    <input  type="text" name="keyword" th:value="${keyword}"  placeholder="Найти товар" >
+    <button type="submit"  >Поиск</button>
+</form>
+<table th:each="doc : ${docs}">
+    <tr>
+        <td>Название</td>
+        <td>Тип</td>
+    </tr>
+    <tr>
+        <td th:text="${doc.name}" ></td>
+        <td th:text="${doc.contentType}"></td>
+        <a th:href="@{/edit/{id}(id=${doc.id})}">Изменить</a>
+    </tr>
+</table>
+<a th:href="@{/signup}">Добавить документ</a>
+</body>
+</html>

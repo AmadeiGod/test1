@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<table th:each="doc : ${list}">
+    <tr>
+        <td>Название</td>
+        <td>Тип</td>
+    </tr>
+    <tr>
+        <td th:text="${doc.name}" ></td>
+        <td th:text="${doc.contentType}"></td>
+    </tr>
+</table>
+</body>
+</html>

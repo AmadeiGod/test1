@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update-book</title>
+</head>
+<body>
+<form action="#"
+      th:action="@{/update/{id}(id=${docTest.id})}"
+      th:object="${docTest}"
+      method="post">
+  <label for="name">Имя</label>
+  <input type="text" th:field="*{name}" id="name" placeholder="Name">
+
+  <label for="contentType">Тип</label>
+  <input type="text" th:field="*{contentType}" id="contentType" placeholder="Type">
+
+    <label for="data">Файл</label>
+    <input type="file" id="data" name="doc" th:field="*{data}" multiple/><br>
+
+
+  <input type="submit" value="Update book">
+</form>
+</body>
+</html>
